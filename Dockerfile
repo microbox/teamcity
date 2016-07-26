@@ -11,8 +11,7 @@ RUN curl -jksSL https://download.jetbrains.com/teamcity/TeamCity-${TEAMCITY_VERS
     | tar -xzf - -C /usr/share
 
 # Update dependencies
-RUN yum groupinstall -y 'Development Tools' && \
-    yum install -y git && \
+RUN yum install -y git && \
     yum clean all
 
 ENV TEAMCITY_HOME="/usr/share/TeamCity" \
